@@ -1,0 +1,9 @@
+.book-preview {
+  text-align: center;
+  color: aliceblue;
+  background-color: rgb(143, 156, 119);
+}
+.book-preview img {
+  /* width: 80%; */
+  border-radius: 15px;
+}

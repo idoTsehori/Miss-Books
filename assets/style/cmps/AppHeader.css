@@ -1,0 +1,36 @@
+.app-header {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  height: 7vh;
+  /* padding: 10px; */
+  background-color: rgb(219, 238, 209);
+}
+.app-header h1 {
+  padding: 10px;
+  margin: 0;
+}
+.app-header nav {
+  display: grid;
+  height: 100%;
+  flex-basis: 50%;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.app-header a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 5px;
+}
+
+.app-header a:hover {
+  box-shadow: inset 0 -2px 0 #a8b098;
+}

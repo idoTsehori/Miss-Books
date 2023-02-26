@@ -1,0 +1,38 @@
+.book-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  width: 50%;
+  padding: 10px;
+  background-color: rgb(225, 207, 237);
+  border-radius: 15px;
+  margin-block-start: 10px;
+}
+
+.book-details h2,
+.book-details h3 {
+  text-align: center;
+}
+
+.book-details img {
+  border-radius: 15px;
+  width: 200px;
+  justify-self: center;
+}
+.book-details button {
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(212, 244, 212);
+  justify-self: center;
+  transition: 0.2s;
+}
+
+.book-details button:hover {
+  scale: 1.1;
+  background-color: rgb(179, 217, 179);
+}
