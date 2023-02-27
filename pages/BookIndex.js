@@ -6,6 +6,8 @@ import BookList from '../cmps/BookList.js'
 import BookDetails from '../cmps/BookDetails.js'
 import BookEdit from '../cmps/BookEdit.js'
 
+import { eventBusService } from '../services/event-bus.service.js'
+
 export default {
   template: `
   <section class="book-index">
@@ -35,12 +37,18 @@ export default {
   },
   methods: {
     removeBook(bookId) {
-      bookService.remove(bookId).then(() => {
-        const idx = this.books.findIndex((book) => {
-          return book.id === bookId
+      bookService
+        .remove(bookId)
+        .then(() => {
+          const idx = this.books.findIndex((book) => {
+            return book.id === bookId
+          })
+          this.books.splice(idx, 1)
+          eventBusService.emit('show-msg', { txt: 'Book is removed', type: 'success' })
         })
-        this.books.splice(idx, 1)
-      })
+        .catch((err) => {
+          eventBusService.emit('show-msg', { txt: 'Book is failed', type: 'error' })
+        })
     },
     showBookDetails(bookId) {
       this.selectedBook = this.books.find((book) => book.id === bookId)

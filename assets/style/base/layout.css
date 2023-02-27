@@ -10,7 +10,7 @@
   margin: auto;
 }
 
-.router-view {
+.ew {
   min-height: calc(93vh - 3rem);
 }
 

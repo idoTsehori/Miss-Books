@@ -1,0 +1,11 @@
+.user-msg {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: max-content;
+  padding: 8px 20px 8px 20px;
+  font-size: 2em;
+  background-color: rgb(215, 249, 238);
+}

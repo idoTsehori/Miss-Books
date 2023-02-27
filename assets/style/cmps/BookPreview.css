@@ -1,7 +1,18 @@
 .book-preview {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   text-align: center;
   color: aliceblue;
+  /* height: 100px; */
 }
+
+.book-preview h2 {
+  flex-grow: 1;
+}
+
 .book-preview img {
+  margin: auto;
   border-radius: 15px;
+  width: 80%;
 }

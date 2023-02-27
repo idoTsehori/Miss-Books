@@ -4,16 +4,17 @@
 
   gap: 20px;
 
-  padding: 10px;
+  /* padding: 10px; */
   background-color: lightblue;
   list-style-type: none;
 }
 .book-list ul li {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   border-radius: 15px;
   padding: 15px;
   background-color: darkseagreen;
-  /* height: 44vh; */
+  /* height: 50%; */
 }
 
 .book-btns {
