@@ -2,8 +2,8 @@
 
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
-import gBooks from '../assets/books.json' assert { type: 'json' }
-console.log('books:', gBooks)
+import BooksDB from '../assets/books.json' assert { type: 'json' }
+// console.log('books:', gBooks)
 
 const BOOK_KEY = 'booksDB'
 
@@ -49,24 +49,25 @@ function save(book) {
 
 // function getEmptyCar(vendor = '', maxSpeed = 0) {
 function getEmptyBook() {
-  return { id: '', name: '', author: '' }
+  return {
+    id: '',
+    title: '',
+    authors: ['UNKNOWN'],
+    description: 'lalalalala',
+    thumbnail: 'https://cdn.pixabay.com/photo/2015/08/27/10/14/icon-909830__340.png',
+    listPrice: { amount: 19, currencyCode: 'USD', isOnSale: false },
+  }
 }
 
 function _createBooks() {
   let books = utilService.loadFromStorage(BOOK_KEY)
   if (!books || !books.length) {
-    // books = []
-    // books.push(_createBook('hey', 'haim'))
-    // books.push(_createBook('lal', 'haim'))
-    // books.push(_createBook('shu', 'haim'))
-    // books.push(_createBook('dudu', 'haim'))
-    utilService.saveToStorage(BOOK_KEY, gBooks)
+    utilService.saveToStorage(BOOK_KEY, BooksDB)
   }
 }
 
 // function _createBook(name, author) {
 //   const book = getEmptyBook(name, author)
-//   book.id = utilService.makeId()
 //   book.name = name
 //   book.author = author
 //   return book

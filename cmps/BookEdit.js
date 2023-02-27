@@ -5,7 +5,7 @@ export default {
         <section class="book-edit">
             <h2>Add a Book</h2>
             <form @submit.prevent="save">
-                <input type="text" v-model="book.name" placeholder="Book Name">
+                <input type="text" v-model="book.title" placeholder="Book Name">
                 <!-- <input type="number" v-model.number="car.maxSpeed"> -->
                 <button>Save</button>
             </form>

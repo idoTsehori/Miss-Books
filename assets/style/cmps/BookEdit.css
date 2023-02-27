@@ -1,11 +1,17 @@
+.book-edit {
+  background-color: antiquewhite;
+  width: 30vw;
+  text-align: center;
+  padding: 10px;
+}
+
 .book-edit form {
   display: grid;
-  justify-items: start;
-  gap: 10px;
+  /* justify-items: start; */
+  gap: 20px;
 
-  padding: 10px;
-  background-color: rgb(250, 212, 142);
+  /* background-color: rgb(250, 212, 142); */
 }
-.book-edit form button {
-  justify-self: end;
-}
+/* .book-edit form button { */
+/* justify-self: center; */
+/* } */

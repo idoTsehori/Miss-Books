@@ -7,8 +7,11 @@ export default {
             <ul>
                 <li v-for="book in books" :key="book.id">
                     <BookPreview :book="book"/>
-                    <button @click="showDetails(book.id)">Details</button>
-                    <button @click="remove(book.id)">x</button>
+
+                    <section class="book-btns">
+                      <button @click="showDetails(book.id)">Details</button>
+                      <button @click="remove(book.id)">x</button>
+                     </section>
                 </li>
             </ul>
         </section>
@@ -18,6 +21,7 @@ export default {
       this.$emit('remove', bookId)
     },
     showDetails(bookId) {
+      console.log('bookId', bookId)
       this.$emit('show-details', bookId)
     },
   },

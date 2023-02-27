@@ -1,6 +1,7 @@
 export default {
   template: `
         <section class="book-filter">
+          <h2>Serach Book</h2>
             <input 
                 v-model="filterBy.name"
                 @input="filter" 
@@ -10,7 +11,7 @@ export default {
     `,
   data() {
     return {
-      filterBy: { name: '', author: '' },
+      filterBy: { name: '', price: '' },
     }
   },
   methods: {

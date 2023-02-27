@@ -1,21 +1,24 @@
 import { bookService } from '../services/book.service.js'
 
-import BookFilter from './BookFilter.js'
-import BookList from './BookList.js'
+import BookFilter from '../cmps/BookFilter.js'
+import BookList from '../cmps/BookList.js'
 
-import BookDetails from './BookDetails.js'
-import BookEdit from './BookEdit.js'
+import BookDetails from '../cmps/BookDetails.js'
+import BookEdit from '../cmps/BookEdit.js'
 
 export default {
   template: `
   <section class="book-index">
-            <BookFilter @filter="setFilterBy"/>
+             <section class="user-changes-container">
+               <BookFilter @filter="setFilterBy"/>
+               <BookEdit @book-saved="onSaveBook"/>
+             </section>
+
             <BookList 
                 :books="filteredBooks" 
                 v-if="books"
                 @remove="removeBook" 
                 @show-details="showBookDetails" />
-            <BookEdit @car-saved="onSaveBook"/>
             <BookDetails 
                 v-if="selectedBook" 
                 @hide-details="selectedBook = null"
@@ -43,9 +46,11 @@ export default {
       this.selectedBook = this.books.find((book) => book.id === bookId)
     },
     onSaveBook(newBook) {
+      console.log('newBook:', newBook)
       this.books.unshift(newBook)
     },
     setFilterBy(filterBy) {
+      console.log('filterBy:', filterBy)
       this.filterBy = filterBy
     },
   },
@@ -53,7 +58,7 @@ export default {
   computed: {
     filteredBooks() {
       const regex = new RegExp(this.filterBy.name, 'i')
-      return this.books.filter((book) => regex.test(book.name))
+      return this.books.filter((book) => regex.test(book.title))
     },
   },
   created() {

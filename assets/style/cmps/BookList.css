@@ -1,6 +1,7 @@
 .book-list ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+
   gap: 20px;
 
   padding: 10px;
@@ -8,7 +9,28 @@
   list-style-type: none;
 }
 .book-list ul li {
+  display: grid;
   border-radius: 15px;
-  padding: 10px;
+  padding: 15px;
   background-color: darkseagreen;
+  /* height: 44vh; */
+}
+
+.book-btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.book-btns button {
+  justify-content: space-evenly;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(214, 245, 245);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.book-btns button:hover {
+  background-color: rgb(184, 222, 222);
+  scale: 1.1;
 }

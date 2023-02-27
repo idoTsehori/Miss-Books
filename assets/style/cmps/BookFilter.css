@@ -1,5 +1,8 @@
-.car-filter {
-    padding: 10px;
-    background-color: lightgray;
-    margin-block-start: 10px;
+.book-filter {
+  background-color: antiquewhite;
+  /* width: 23%; */
+  /* text-align: center; */
+  padding: 10px;
+  /* background-color: lightgray; */
+  /* margin-block-start: 10px; */
 }

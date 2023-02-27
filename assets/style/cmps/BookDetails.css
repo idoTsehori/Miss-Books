@@ -1,16 +1,17 @@
 .book-details {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  width: 50%;
-  padding: 10px;
-  background-color: rgb(225, 207, 237);
+  gap: 10px;
+  width: 80%;
+  padding: 8px;
+  background-color: rgb(238, 224, 248);
   border-radius: 15px;
-  margin-block-start: 10px;
+  /* margin-block-start: 10px; */
 }
 
 .book-details h2,
@@ -18,9 +19,13 @@
   text-align: center;
 }
 
+.book-details h2 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
 .book-details img {
   border-radius: 15px;
-  width: 200px;
   justify-self: center;
 }
 .book-details button {
