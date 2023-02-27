@@ -1,3 +1,5 @@
+import AddReview from '../cmps/AddReview.js'
+
 export default {
   props: ['book'],
   template: `
@@ -8,18 +10,11 @@ export default {
             <p >{{this.book.description}}</p>
             <p class="page-count-txt"> Page Count: {{bookPageCountMsg}}</p>
             <p class="date">New/Old: {{publishedDateMsg}}</p>
+            <AddReview :book="book"/>
             <button @click="closeDetails">Close</button>
         </section>
     `,
-  // data() {
 
-  //   return {
-  //     title: this.book.title,
-  //     author: this.book.author,
-  //     img: this.book.thumbnail,
-  //     description: this.book.description,
-  //   }
-  // },
   methods: {
     closeDetails() {
       this.$emit('hide-details')
@@ -38,5 +33,8 @@ export default {
       if (yearsDiff > 10) return 'Vintage'
       return 'New'
     },
+  },
+  components: {
+    AddReview,
   },
 }

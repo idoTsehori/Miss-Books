@@ -4,3 +4,18 @@
   /* align-items: center; */
   justify-content: space-around;
 }
+
+.book-index .user-changes-container .add-book-btn {
+  align-self: center;
+  border: none;
+  border-radius: 15px;
+  background-color: antiquewhite;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-index .user-changes-container .add-book-btn:hover {
+  background-color: rgb(234, 218, 199);
+  scale: 1.04;
+}

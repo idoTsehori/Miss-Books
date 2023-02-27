@@ -4,7 +4,7 @@ import BookFilter from '../cmps/BookFilter.js'
 import BookList from '../cmps/BookList.js'
 
 import BookDetails from '../cmps/BookDetails.js'
-import BookEdit from '../cmps/BookEdit.js'
+// import BookEdit from './BookEdit.js'
 
 import { eventBusService } from '../services/event-bus.service.js'
 
@@ -12,8 +12,10 @@ export default {
   template: `
   <section class="book-index">
              <section class="user-changes-container">
+              <button class="add-book-btn"
+              > <RouterLink :to="'/book/edit/'">Add a NewBook</RouterLink> 
+            </button>
                <BookFilter @filter="setFilterBy"/>
-               <BookEdit @book-saved="onSaveBook"/>
              </section>
 
             <BookList 
@@ -53,10 +55,10 @@ export default {
     showBookDetails(bookId) {
       this.selectedBook = this.books.find((book) => book.id === bookId)
     },
-    onSaveBook(newBook) {
-      console.log('newBook:', newBook)
-      this.books.unshift(newBook)
-    },
+    // onSaveBook(newBook) {
+    //   console.log('newBook:', newBook)
+    //   this.books.unshift(newBook)
+    // },
     setFilterBy(filterBy) {
       console.log('filterBy:', filterBy)
       this.filterBy = filterBy
@@ -76,6 +78,5 @@ export default {
     BookFilter,
     BookList,
     BookDetails,
-    BookEdit,
   },
 }

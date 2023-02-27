@@ -1,7 +1,7 @@
 export default {
   template: `
         <section class="book-filter">
-          <h2>Serach Book</h2>
+          <h2>Serach a Book</h2>
             <input 
                 v-model="filterBy.name"
                 @input="filter" 

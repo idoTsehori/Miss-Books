@@ -1,9 +1,9 @@
 import HomePage from './pages/HomePage.js'
 import AboutUs from './pages/AboutUs.js'
 import BookIndex from './pages/BookIndex.js'
+import BookEdit from './pages/BookEdit.js'
 
 // import BookDetails from './pages/BookDetails.js'
-// import CarEdit from './pages/CarEdit.js'
 
 // import BookIndex from './pages/BookIndex.js'
 // import HomePage from './pages/HomePage.js'
@@ -36,14 +36,14 @@ const options = {
       path: '/book',
       component: BookIndex,
     },
-    // {
-    //   path: '/car/:carId',
-    //   component: BookDetails,
-    // },
-    // {
-    //   path: '/car/edit/:carId?',
-    //   component: CarEdit,
-    // },
+    {
+      path: '/book/:bookId',
+      component: BookEdit,
+    },
+    {
+      path: '/book/edit/:bookId?',
+      component: BookEdit,
+    },
     // Last fallback if no route was matched:
     // {
     //   path: '/:catchAll(.*)',

@@ -11,6 +11,7 @@ export default {
                     <section class="book-btns">
                       <button @click="showDetails(book.id)">Details</button>
                       <button @click="remove(book.id)">x</button>
+                      <RouterLink :to="'/book/edit/'+book.id">Edit</RouterLink> 
                      </section>
                 </li>
             </ul>
