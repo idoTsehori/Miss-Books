@@ -5,7 +5,7 @@ export default {
             <h2>{{ this.book.title }}</h2>
             <h3>{{ this.book.authors[0] }}</h3>
             <img :src="this.book.thumbnail"/>
-            <h4>{{ formatNumToPrice }}</h4>
+            <h4 :class="priceColor">{{ formatNumToPrice }}</h4>
         </article>
     `,
 
@@ -16,6 +16,12 @@ export default {
         currency: this.book.listPrice.currencyCode,
       })
       return numFormat.format(this.book.listPrice.amount)
+    },
+    priceColor() {
+      const price = this.book.listPrice.amount
+      if (price > 150) return 'red'
+      if (price < 20) return 'green'
+      return ''
     },
   },
 }

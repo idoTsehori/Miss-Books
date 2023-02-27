@@ -1,8 +1,10 @@
 .book-filter {
+  height: 15vh;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
   background-color: antiquewhite;
-  /* width: 23%; */
-  /* text-align: center; */
   padding: 10px;
-  /* background-color: lightgray; */
-  /* margin-block-start: 10px; */
 }

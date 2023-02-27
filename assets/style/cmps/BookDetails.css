@@ -1,15 +1,16 @@
 .book-details {
   position: fixed;
-  top: 0;
+  text-align: center;
+  top: 30px;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   gap: 10px;
-  width: 80%;
-  padding: 8px;
-  background-color: rgb(238, 224, 248);
+  width: 60%;
+  padding: 10px;
+  background-color: rgb(249, 242, 255);
   border-radius: 15px;
   /* margin-block-start: 10px; */
 }
@@ -24,8 +25,20 @@
   font-weight: bolder;
 }
 
+.book-details p {
+  text-align: left;
+}
+
+.book-details .page-count-txt {
+  text-align: center;
+}
+.book-details .date {
+  text-align: center;
+}
+
 .book-details img {
   border-radius: 15px;
+  width: 50%;
   justify-self: center;
 }
 .book-details button {

@@ -5,7 +5,7 @@
   gap: 20px;
 
   /* padding: 10px; */
-  background-color: lightblue;
+  background-color: rgb(216, 243, 252);
   list-style-type: none;
 }
 .book-list ul li {
@@ -13,8 +13,8 @@
   flex-direction: column;
   border-radius: 15px;
   padding: 15px;
-  background-color: darkseagreen;
-  /* height: 50%; */
+  background-color: rgb(146, 187, 146);
+  /* height: 44vh; */
 }
 
 .book-btns {
@@ -26,12 +26,12 @@
   justify-content: space-evenly;
   cursor: pointer;
   border: none;
-  background-color: rgb(214, 245, 245);
+  background-color: #fefee7;
   border-radius: 10px;
   transition: 0.3s;
 }
 
 .book-btns button:hover {
-  background-color: rgb(184, 222, 222);
+  background-color: #e4e4ca;
   scale: 1.1;
 }
