@@ -1,4 +1,5 @@
 import AddReview from '../cmps/AddReview.js'
+import { bookService } from '../services/book.service.js'
 
 export default {
   props: ['book'],
@@ -10,7 +11,7 @@ export default {
             <p >{{this.book.description}}</p>
             <p class="page-count-txt"> Page Count: {{bookPageCountMsg}}</p>
             <p class="date">New/Old: {{publishedDateMsg}}</p>
-            <AddReview :book="book"/>
+            <AddReview @save-review="saveReview"/>
             <button @click="closeDetails">Close</button>
         </section>
     `,
@@ -18,6 +19,15 @@ export default {
   methods: {
     closeDetails() {
       this.$emit('hide-details')
+    },
+    saveReview(review) {
+      // Todo:
+      console.log('review:', review)
+      if (!this.book.review) this.book.review = [review]
+      else this.book.review = review
+      bookService.save(this.book).then((savedBook) => {
+        console.log('savedBook', savedBook)
+      })
     },
   },
 
@@ -36,5 +46,6 @@ export default {
   },
   components: {
     AddReview,
+    bookService,
   },
 }

@@ -5,11 +5,11 @@ export default {
              <form @submit.prevent="saveReview">
               <label>
                 Full name: 
-                <input type="text" placeholder="name"/>
+                <input type="text" placeholder="name" v-model="fullName"/>
               </label>
               <label>
                 Rate:
-                <select name="cars" id="cars">
+                <select v-model="rate">
                   <option value="1">⭐</option>
                   <option value="2">⭐⭐</option>
                   <option value="3">⭐⭐⭐</option>
@@ -17,30 +17,29 @@ export default {
                   <option value="5">⭐⭐⭐⭐⭐</option>
                 </select>
               </label>
+              <label>
+                Read date:  
+                <input  v-modal="date"
+                 type="date" value="2018-07-22"
+                min="2018-01-01" max="2020-12-31"/>
+              </label>
+
               <button>Save</button>
             </form>
              </section>
         `,
-
-  created() {
-    console.log('this.book', this.book)
+  data() {
+    return {
+      fullName: '',
+      rate: null,
+      date: null,
+    }
   },
   methods: {
     saveReview() {
-      console.log('saved')
+      console.log('this.fullName', this.fullName)
+      console.log('this.rate', this.rate)
+      this.$emit('save-review', { fullName: this.fullName, rate: this.rate })
     },
   },
-  //   computed: {
-  //     bookPageCountMsg() {
-  //       if (this.book.pageCount > 500) return 'Serious Reading'
-  //       if (this.book.pageCount > 200) return 'Descent Reading'
-  //       if (this.book.pageCount < 100) return 'Light Reading'
-  //     },
-  //     publishedDateMsg() {
-  //       const currYear = new Date().getFullYear()
-  //       const yearsDiff = currYear - this.book.publishedDate
-  //       if (yearsDiff > 10) return 'Vintage'
-  //       return 'New'
-  //     },
-  //   },
 }
