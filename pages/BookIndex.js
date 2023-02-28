@@ -11,7 +11,7 @@ import { eventBusService } from '../services/event-bus.service.js'
 export default {
   template: `
   <section class="book-index">
-             <section class="user-changes-container">
+             <section  class="user-changes-container">
               <button class="add-book-btn"
               > <RouterLink :to="'/book/edit/'">Add a NewBook</RouterLink> 
             </button>
@@ -23,10 +23,6 @@ export default {
                 v-if="books"
                 @remove="removeBook" 
                 @show-details="showBookDetails" />
-            <BookDetails 
-                v-if="selectedBook" 
-                @hide-details="selectedBook = null"
-                :book="selectedBook"/>
         </section>
     `,
 
@@ -53,12 +49,9 @@ export default {
         })
     },
     showBookDetails(bookId) {
-      this.selectedBook = this.books.find((book) => book.id === bookId)
+      this.$router.push('/book/' + bookId)
     },
-    // onSaveBook(newBook) {
-    //   console.log('newBook:', newBook)
-    //   this.books.unshift(newBook)
-    // },
+
     setFilterBy(filterBy) {
       console.log('filterBy:', filterBy)
       this.filterBy = filterBy

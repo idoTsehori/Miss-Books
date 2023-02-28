@@ -1,7 +1,7 @@
 .book-details {
   position: fixed;
   text-align: center;
-  top: 30px;
+  top: 10px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -12,7 +12,7 @@
   padding: 10px;
   background-color: rgb(249, 242, 255);
   border-radius: 15px;
-  /* margin-block-start: 10px; */
+  /* overflow-y: scroll; */
 }
 
 .book-details h2,
@@ -72,4 +72,21 @@
   display: block;
   width: 10vw;
   background-color: rgb(200, 249, 249);
+}
+
+/*  */
+.book-details .reviews-container {
+  list-style: none;
+  display: grid;
+  padding: 0;
+  margin: 0;
+  gap: 0.5em;
+}
+
+.book-details .reviews-container li {
+  padding: 0.2em;
+  border: 1px solid black;
+  display: flex;
+  /* gap: 2em; */
+  justify-content: space-around;
 }

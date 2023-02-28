@@ -2,6 +2,7 @@ import HomePage from './pages/HomePage.js'
 import AboutUs from './pages/AboutUs.js'
 import BookIndex from './pages/BookIndex.js'
 import BookEdit from './pages/BookEdit.js'
+import BookDetails from './cmps/BookDetails.js'
 
 // import BookDetails from './pages/BookDetails.js'
 
@@ -38,7 +39,7 @@ const options = {
     },
     {
       path: '/book/:bookId',
-      component: BookEdit,
+      component: BookDetails,
     },
     {
       path: '/book/edit/:bookId?',
